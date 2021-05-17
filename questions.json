@@ -1,0 +1,36 @@
+{
+  "quiz": [
+    {
+      "question": "¿Cuál es la cascada más alta del mundo?",
+      "answer" : [
+        "Salto Angel",
+        "test",
+        "test 2"
+      ]
+    },
+    {
+      "question": "¿De dónde es el baile de Capoeira?",
+      "answer" : [
+        "Brasil",
+        "test",
+        "test 2"
+      ]
+    },
+    {
+      "question": "¿Monrovia es la capital de qué país?",
+      "answer" : [
+        "Liberia",
+        "test",
+        "test 2"
+      ]
+    },
+    {
+      "question": "¿De dónde es el whisky?",
+      "answer" : [
+        "Irlanda",
+        "test",
+        "test 2"
+      ]
+    }
+  ]
+}
