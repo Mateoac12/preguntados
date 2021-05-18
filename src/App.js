@@ -1,11 +1,16 @@
 import Quiz from 'components/Quiz';
+import Timer from 'components/Timer';
+import LifeContextProvider from 'context/lifeContext';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Quiz />
-    </div>
+    <LifeContextProvider>
+      <div className="App">
+        <Timer />
+        <Quiz />
+      </div>
+    </LifeContextProvider>
   );
 }
 

@@ -1,8 +1,8 @@
 import SingleAnswer from 'components/SingleAnswer'
 import React from 'react'
 
-const ButtonsAnswer = ({ answers, correctAnswer }) => {
-  console.log({ answers })
+const ButtonsAnswer = ({ answers }) => {
+  const correctAnswer = answers[0]
 
   const checkedCorrectAnswer = (answer) => {
     return correctAnswer === answer
@@ -10,7 +10,7 @@ const ButtonsAnswer = ({ answers, correctAnswer }) => {
 
   return <>
     {
-      answers.sort().map(answer => (
+      answers.map(answer => (
         <SingleAnswer
           correct={checkedCorrectAnswer(answer)}
           answer={answer}

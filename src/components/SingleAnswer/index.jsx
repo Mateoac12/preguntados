@@ -1,17 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { LifeContext } from 'context/lifeContext'
 
 const SingleAnswer = ({ answer, correct }) => {
-  const [life, setLife] = useState(3)
-
-  console.log(correct)
+  const { setLife, setPoints } = React.useContext(LifeContext)
 
   const handleClickAnswer = () => {
-    alert(correct)
-    setLife(lastLife => lastLife - 1)
+    correct
+      ? setPoints(lastPoint => lastPoint + 1)
+      : setLife(lastLife => lastLife - 1)
   }
 
   return <>
-    <h1>{life}</h1>
     <button onClick={handleClickAnswer}>{answer}</button>
   </>
 }
