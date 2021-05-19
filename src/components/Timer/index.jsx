@@ -1,22 +1,32 @@
-import { LifeContext } from 'context/lifeContext'
-import React, { useContext, useEffect, useState } from 'react'
+import { GameContext } from 'context/gameContext'
+import React, { useState, useEffect, useContext } from 'react'
 
-const Timer = () => {
-  const [time, setTime] = useState(5)
-  const { setLife } = useContext(LifeContext)
+const Timer = ({ question }) => {
+  const [timer, setTimer] = useState(10)
+  const { setLifes, lifes } = useContext(GameContext)
 
   useEffect(() => {
-    if (time === 0) {
-      setTime(5)
-      setLife(lastLife => lastLife - 1)
-    } else {
-      setTimeout(() => {
-        setTime(lastTime => lastTime - 1)
-      }, 1000)
-    }
-  }, [time, setLife])
+    setTimer(10)
+  }, [question])
 
-  return <p>{time}</p>
+  useEffect(() => {
+    handleStartTimer()
+  }, [])
+
+  const handleStartTimer = () => {
+    setInterval(() => {
+      setTimer(lastTime => lastTime - 1)
+    }, 1000)
+  }
+
+  if (timer === 0) {
+    setTimer(10)
+    setLifes(lifes - 1)
+  }
+
+
+  return <h2>Timer: {timer} </h2>
+
 }
 
 export default Timer
